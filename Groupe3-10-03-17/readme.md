@@ -1,9 +1,13 @@
 10/03/2017
 
-- Modification du site
+- Modification du site : Sofiane
 
-- Réagencement du github
+- Réagencement du github : Sofiane, Axel
 
-- Amélioration de la base de données
+- Amélioration de la base de données : Sofiane, Axel, Alexandre
 
-- Production du Dictionnaire de données
+- Production du Dictionnaire de données : Sofiane, Axel, Alexandre
+
+
+
+
