@@ -8,15 +8,13 @@
 #------------------------------------------------------------
 
 CREATE TABLE Utilisateur(
-        pk_utilisateur               int (11) Auto_increment  NOT NULL ,
-        adresse_mail_utilisateur     Varchar (30) ,
-        mot_de_passe                 Varchar (12) ,
-        nom_utilisateur              Varchar (25) ,
-        prenom_utilisateur           Varchar (30) ,
+        adresse_mail_utilisateur     Varchar (30) NOT NULL ,
+        mot_de_passe                 Varchar (12) NOT NULL ,
+        nom_utilisateur              Varchar (25) NOT NULL ,
+        prenom_utilisateur           Varchar (30) NOT NULL ,
         ville_utilisateur            Varchar (25) ,
         date_inscription_utilisateur Date ,
-        PRIMARY KEY (pk_utilisateur ) ,
-        UNIQUE (adresse_mail_utilisateur )
+        PRIMARY KEY (adresse_mail_utilisateur )
 )ENGINE=InnoDB;
 
 
@@ -81,13 +79,13 @@ CREATE TABLE admin(
 #------------------------------------------------------------
 
 CREATE TABLE Reclamation(
-        reclamation_pk int (11) Auto_increment  NOT NULL ,
-        date_ouverture Date ,
-        etat           Varchar (25) ,
-        objet          Varchar (25) ,
-        texte          Varchar (280) ,
-        date_fermeture Date ,
-        pk_utilisateur Int ,
+        reclamation_pk           int (11) Auto_increment  NOT NULL ,
+        date_ouverture           Date ,
+        etat                     Varchar (25) ,
+        objet                    Varchar (25) ,
+        texte                    Varchar (280) ,
+        date_fermeture           Date ,
+        adresse_mail_utilisateur Varchar (30) ,
         PRIMARY KEY (reclamation_pk )
 )ENGINE=InnoDB;
 
@@ -141,10 +139,10 @@ CREATE TABLE Voiture_achat(
 #------------------------------------------------------------
 
 CREATE TABLE achete(
-        date_achat     Date ,
-        pk_utilisateur Int NOT NULL ,
-        idVehicule     Int NOT NULL ,
-        PRIMARY KEY (pk_utilisateur ,idVehicule )
+        date_achat               Date ,
+        adresse_mail_utilisateur Varchar (30) NOT NULL ,
+        idVehicule               Int NOT NULL ,
+        PRIMARY KEY (adresse_mail_utilisateur ,idVehicule )
 )ENGINE=InnoDB;
 
 
@@ -153,11 +151,11 @@ CREATE TABLE achete(
 #------------------------------------------------------------
 
 CREATE TABLE loue(
-        date_debut      Date ,
-        date_fin        Date ,
-        pk_utilisateur  Int NOT NULL ,
-        immatriculation Varchar (25) NOT NULL ,
-        PRIMARY KEY (pk_utilisateur ,immatriculation )
+        date_debut               Date ,
+        date_fin                 Date ,
+        adresse_mail_utilisateur Varchar (30) NOT NULL ,
+        immatriculation          Varchar (25) NOT NULL ,
+        PRIMARY KEY (adresse_mail_utilisateur ,immatriculation )
 )ENGINE=InnoDB;
 
 
@@ -185,12 +183,12 @@ CREATE TABLE administre(
 
 ALTER TABLE Voiture_location ADD CONSTRAINT FK_Voiture_location_immatriculation FOREIGN KEY (immatriculation) REFERENCES Vehicule_location(immatriculation);
 ALTER TABLE Camion_location ADD CONSTRAINT FK_Camion_location_immatriculation FOREIGN KEY (immatriculation) REFERENCES Vehicule_location(immatriculation);
-ALTER TABLE Reclamation ADD CONSTRAINT FK_Reclamation_pk_utilisateur FOREIGN KEY (pk_utilisateur) REFERENCES Utilisateur(pk_utilisateur);
+ALTER TABLE Reclamation ADD CONSTRAINT FK_Reclamation_adresse_mail_utilisateur FOREIGN KEY (adresse_mail_utilisateur) REFERENCES Utilisateur(adresse_mail_utilisateur);
 ALTER TABLE Camion_achat ADD CONSTRAINT FK_Camion_achat_idVehicule FOREIGN KEY (idVehicule) REFERENCES Vehicule_achat(idVehicule);
 ALTER TABLE Voiture_achat ADD CONSTRAINT FK_Voiture_achat_idVehicule FOREIGN KEY (idVehicule) REFERENCES Vehicule_achat(idVehicule);
-ALTER TABLE achete ADD CONSTRAINT FK_achete_pk_utilisateur FOREIGN KEY (pk_utilisateur) REFERENCES Utilisateur(pk_utilisateur);
+ALTER TABLE achete ADD CONSTRAINT FK_achete_adresse_mail_utilisateur FOREIGN KEY (adresse_mail_utilisateur) REFERENCES Utilisateur(adresse_mail_utilisateur);
 ALTER TABLE achete ADD CONSTRAINT FK_achete_idVehicule FOREIGN KEY (idVehicule) REFERENCES Vehicule_achat(idVehicule);
-ALTER TABLE loue ADD CONSTRAINT FK_loue_pk_utilisateur FOREIGN KEY (pk_utilisateur) REFERENCES Utilisateur(pk_utilisateur);
+ALTER TABLE loue ADD CONSTRAINT FK_loue_adresse_mail_utilisateur FOREIGN KEY (adresse_mail_utilisateur) REFERENCES Utilisateur(adresse_mail_utilisateur);
 ALTER TABLE loue ADD CONSTRAINT FK_loue_immatriculation FOREIGN KEY (immatriculation) REFERENCES Vehicule_location(immatriculation);
 ALTER TABLE gere ADD CONSTRAINT FK_gere_id FOREIGN KEY (id) REFERENCES admin(id);
 ALTER TABLE gere ADD CONSTRAINT FK_gere_immatriculation FOREIGN KEY (immatriculation) REFERENCES Vehicule_location(immatriculation);
