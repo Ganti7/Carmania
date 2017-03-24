@@ -55,7 +55,7 @@ include("verif.php");
 			$email_erreur1= NULL;
 			$email_erreur2= NULL;
 			$i =0;
-			$temps = time();
+			$temps = date("Y/m/d");
 			$prenom=$_POST['LastName'];
 			$nom=$_POST['FirstName'];
 			$mdp=$_POST['Password'];
@@ -108,32 +108,32 @@ include("verif.php");
 
 				<p>Cliquez <a href="./carmania.php">ici</a> pour revenir à la page d accueil</p>';
 			
-				$nike=$db->query('INSERT INTO utilisateur (adresse_mail_utilisateur, mot_de_passe, nom_utilisateur, prenom_utilisateur,
+				$query=$db->prepare('INSERT INTO utilisateur (adresse_mail_utilisateur, mot_de_passe, nom_utilisateur, prenom_utilisateur,
 				ville_utilisateur, date_inscription_utilisateur)
-				VALUES (email, mdp, nom, prenom, ville, temps)' );
+				VALUES (:email, :mdp, :nom, :prenom, :ville, :temps)' );
 				
-				/*$query->execute(array(
+				$query->execute(array(
 
-				'nom' => $nom,
+				':nom' => $_POST['FirstName'],
 
-				'email' => $email,
+				':email' => $_POST['mail'],
 
-				'mdp' => $mdp,
+				':mdp' => $_POST['Password'],
 
-				'prenom' => $prenom,
+				':prenom' => $_POST['LastName'],
 
-				'ville' => $ville,
+				':ville' => $_POST['City'],
 
-				'temps' => $temps
+				':temps' => $temps
 
-    ));*/
-				/*$query->bindValue(':email', $email, PDO::PARAM_STR);
-				$query->bindValue(':mdp', $mdp, PDO::PARAM_INT);
-				$query->bindValue(':nom', $nom, PDO::PARAM_STR);
-				$query->bindValue(':prenom', $prenom, PDO::PARAM_STR);
-				$query->bindValue(':ville', $ville, PDO::PARAM_STR);
-				$query->bindValue(':temps', $temps, PDO::PARAM_INT);*/
-				$query->execute();
+    ));
+				/*$query->bindValue(':email', $email);
+				$query->bindValue(':mdp', $mdp);
+				$query->bindValue(':nom', $nom);
+				$query->bindValue(':prenom', $prenom);
+				$query->bindValue(':ville', $ville);
+				$query->bindValue(':temps', $temps);
+				$query->execute();*/
 				
 				$_SESSION['mail']=$email;
 				//$query->CloseCursor();
