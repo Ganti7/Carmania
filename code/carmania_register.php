@@ -55,7 +55,7 @@ include("verif.php");
 			$email_erreur1= NULL;
 			$email_erreur2= NULL;
 			$i =0;
-			$temps = time();
+			$temps = date("Y/m/d");
 			$prenom=$_POST['LastName'];
 			$nom=$_POST['FirstName'];
 			$mdp=$_POST['Password'];
@@ -111,15 +111,32 @@ include("verif.php");
 				$query=$db->prepare('INSERT INTO utilisateur (adresse_mail_utilisateur, mot_de_passe, nom_utilisateur, prenom_utilisateur,
 				ville_utilisateur, date_inscription_utilisateur)
 				VALUES (:email, :mdp, :nom, :prenom, :ville, :temps)' );
-				$query->bindValue(':email', $email, PDO::PARAM_STR);
-				$query->bindValue(':mdp', $mdp, PDO::PARAM_INT);
-				$query->bindValue(':nom', $nom, PDO::PARAM_STR);
-				$query->bindValue(':prenom', $prenom, PDO::PARAM_STR);
-				$query->bindValue(':ville', $ville, PDO::PARAM_STR);
-				$query->bindValue(':temps', $temps, PDO::PARAM_INT);
+				
+				$query->execute(array(
+
+				':nom' => $_POST['FirstName'],
+
+				':email' => $_POST['mail'],
+
+				':mdp' => $_POST['Password'],
+
+				':prenom' => $_POST['LastName'],
+
+				':ville' => $_POST['City'],
+
+				':temps' => $temps
+
+    ));
+				/*$query->bindValue(':email', $email);
+				$query->bindValue(':mdp', $mdp);
+				$query->bindValue(':nom', $nom);
+				$query->bindValue(':prenom', $prenom);
+				$query->bindValue(':ville', $ville);
+				$query->bindValue(':temps', $temps);
+				$query->execute();*/
 				
 				$_SESSION['mail']=$email;
-				$query->CloseCursor();
+				//$query->CloseCursor();
 			}
 			
 			
