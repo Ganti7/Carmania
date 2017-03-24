@@ -1,14 +1,14 @@
 Sofiane :
   - Modification de la page carmania_co.php:
-         Quand un utilisateur se connectait le site web le déconnectait aussitôt, rajout d'une variable de session qui retient  
+         Quand un utilisateur se connectait, le site web le déconnectait aussitôt, rajout d'une variable de session qui retient  
          si l'utilisateur est connecté ou pas, la variable est supprimé quand le navigateur est fermé.
-         La page redirige désormais vers une page d'inscription.
- - Création de la page d'inscription :
+         La page contient désormais un lien vers une page d'inscription.
+ - Création de la page d'inscription carmania_register :
          La page d'inscription contient un formulaire à remplir par l'utilisateur (nom,prénom,ville,mot de passe, email), la page 
          vérifie si l'input mail est remplit, si il n'est pas déjà pris et si le mot de passe correspond au champ où l'utilisateur
          doit le retaper.
-         Si tout est en ordre la page redirige vers la page d'accueil. Pour l'instant les données ne sont toujours pas ajouté dans 
-         base de données.
+         Si tout est en ordre la page souhaite la bienvenue a l'utilisateur et le redirige vers la page d'accueil. Les données rentrées 
+         par l'utilisateur sont rajoutées à la table "utilisateur" de la base de données carmania.
  - Préparation de la page carmania_deco :
           La page permettra de déconnecter l'utilisateur. Pour l'instant pas au point.
 
