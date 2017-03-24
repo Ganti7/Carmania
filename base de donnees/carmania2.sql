@@ -24,6 +24,7 @@ CREATE TABLE Utilisateur(
 
 CREATE TABLE Vehicule_location(
         idVehicule_location int (11) Auto_increment  NOT NULL ,
+        prix_journee        DECIMAL (15,3)  ,
         carburant           Varchar (25) ,
         puissance           Int ,
         marque              Varchar (25) ,
@@ -97,6 +98,7 @@ CREATE TABLE Reclamation(
 
 CREATE TABLE Vehicule_achat(
         idVehicule_achat  int (11) Auto_increment  NOT NULL ,
+        prix_achat        DECIMAL (15,3)  ,
         carburant         Varchar (25) ,
         puissance         Int ,
         marque            Varchar (25) ,
