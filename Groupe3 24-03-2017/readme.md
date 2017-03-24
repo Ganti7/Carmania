@@ -11,6 +11,7 @@ Sofiane :
          par l'utilisateur sont rajoutées à la table "utilisateur" de la base de données carmania.
  - Préparation de la page carmania_deco :
           La page permettra de déconnecter l'utilisateur. Pour l'instant pas au point.
+ - Description de tout les fichiers dans le dossier code du github.
 
 Axel : 
   - Optimisation de la BDD, modfication de la table vehicule_location afin de faciliter les requêtes
