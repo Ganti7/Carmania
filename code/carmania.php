@@ -1,3 +1,12 @@
+<?php
+
+session_start();
+
+
+include("identifiants.php");
+include("verif.php");
+?>
+
 <!DOCTYPE html>
 
 	<html class="fond">
@@ -12,7 +21,14 @@
 	<body>
 		<h1 class= "titre" >Carmania</h1>
 		
-		<a href="carmania_co.html"><button class="bouton bouton1">Connexion</button></a>
+		<?php
+		
+		if(!isset($_POST['pseudo']))
+		{
+			echo '<a href="carmania_co.php"><button class="bouton bouton1">Connexion</button></a>';
+		
+		}
+		?>
 
 		<span  class= "test">
 		</span>

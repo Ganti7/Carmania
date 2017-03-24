@@ -1,7 +1,22 @@
+html{
+    height: 100%
+    
+}
+
+
+body {
+    height: 100%;
+    
+}
+
+
+
+
+
 
 
 .fond {
-
+        
 	background-color : #1e2020;
 	font-family : Caflisch Script Pro, cursive;
 	position: relative;
@@ -13,6 +28,7 @@
 
 .titre {
 	color : #99e699; 
+        text-align: center;
 	
 
 
@@ -20,6 +36,7 @@
 
 
 .bouton_a {
+  
   display: inline-block;
   border-radius: 4px;
   background-color: #33cc00;
@@ -28,16 +45,18 @@
   text-align: center;
   font-size: 28px;
   padding: 20px;
-  width: 500px;
-  height: 250px;
+  width: 25%;
+  height:25%;
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px;
-  position: absolute;
+  position: relative;
   top: 200px;
-  right: 1000px;
+  /*right: 1000px;*/
+  float: left;
   
 }
+
 
 .bouton_a span {
   cursor: pointer;
@@ -69,13 +88,15 @@
 
 	background-color: #4CAF50;
 	/*width:500;*/
-	height:100;
-	position: relative;
+	height:50%;
+        /*display:inline-flex;*/
+	/*position: relative;*/
 	padding:5px;
-	padding-top:850px;
-	top : 820px; 
-	right : 70px;
+	padding-bottom:40%;
+	/*top : 820px; 
+	right : 70px;*/
 	z-index:-1;
+        margin: auto;
 }
 
 .bouton {
@@ -88,11 +109,11 @@
 	display: inline-block;
 	font-size: 16px;
 	margin: 4px 2px;
-	position: relative;
+	/*position: relative;*/
 	/*margin: auto;*/
-	bottom : 50px; 
-	left : 725px;
-	
+	/*bottom : 50px; */
+	/*left : 725px;*/
+	float: right;
 
 	transition-duration: 0.4s;
 	cursor: pointer;
@@ -100,6 +121,7 @@
 }
 
 .bouton1 {
+        
 	background-color: #4CAF50; 
 	color: white; 
 	border: 2px solid #4CAF50;
