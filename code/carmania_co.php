@@ -2,7 +2,7 @@
 
 session_start();
 
-		
+		$page=$_SERVER["HTTP_REFERER"];
 
 		
 include("functions.php");
@@ -52,7 +52,7 @@ include("constants.php");
 			{
 				
 			$message='';
-			//$page='';
+			
 			if (empty($_POST['mail']) || empty($_POST['Password']) ) //Oublie d'un champ
 				{
 					$message = '<p>une erreur s\'est produite pendant votre identification.
@@ -73,13 +73,11 @@ include("constants.php");
 					$_SESSION['mail'] = $data['adresse_mail_utilisateur'];
 					//$page = htmlspecialchars($_POST['page']);
 					$_SESSION['id'] =1;
-					
-					header("Location: carmania.php"); // redirection
-					
 					$message = '<p>Bienvenue '.$data['prenom_utilisateur'].', 
 					vous êtes maintenant connecté!</p>
 					<p>Cliquez <a href="'.$page.'">ici</a> 
 					pour revenir à la page précédente</p>';  
+					
 					}
 				else // Acces pas OK !
 					{
