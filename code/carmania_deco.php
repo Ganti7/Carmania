@@ -28,23 +28,19 @@ include("functions.php");
 		?>
 		
 		<?php
-		
-		if ($id==0) erreur(ERR_IS_NOT_CO);
+			if ($id==0) erreur(ERR_IS_NOT_CO);
 		?>
 		
 		<?php
-					$page=$_SERVER["HTTP_REFERER"];
-                    echo '<p>Vous êtes à présent déconnecté <br />
-                    Cliquez <a href="'.htmlspecialchars($_SERVER['HTTP_REFERER']).'">ici</a> 
-                    pour revenir à la page précédente.<br />
-                    Cliquez <a href="carmania.php">ici</a> pour revenir à la page principale</p>';
-                    echo '</div></body></html>';
-					$_SESSION['id'] =0;
-		
-						
-    
-			
-?>
+			header("Location: carmania.php"); // redirection
+			/*
+            echo '<p>Vous êtes à présent déconnecté <br />
+            Cliquez <a href="'.htmlspecialchars($_SERVER['HTTP_REFERER']).'">ici</a> 
+            pour revenir à la page précédente.<br />
+            Cliquez <a href="./index.php">ici</a> pour revenir à la page principale</p>';
+            echo '</div></body></html>';
+			*/					
+		?>
 
 		
 

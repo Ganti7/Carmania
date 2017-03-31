@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+date_default_timezone_set('Europe/Paris');
 if(!isset($page)) $page =$_SERVER["HTTP_REFERER"];
 include("functions.php");
 include("identifiants.php");
@@ -64,9 +65,7 @@ include("verif.php");
 			$email=$_POST['mail'];
 			$ville=$_POST['City'];
 			
-			// Verification du mdp
-			
-                        
+			// Verification du mdp                       
                         
                         //verifmdp($mdp,$confirm,$i);
                         
@@ -92,7 +91,7 @@ include("verif.php");
 			$query->execute();
 			$mail_free=($query->fetchColumn()==0)?1:0;
 			$query->CloseCursor();
-			
+			https://www.europcar.fr/
 			
 			// Verification du mail
 			if(!$mail_free)
@@ -106,10 +105,7 @@ include("verif.php");
 			if(!preg_match("#^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]{2,}\.[a-z]{2,4}$#", $email) || empty($email))
 			{
 				$email_erreur2= "Votre adresse E-mail n'a pas un format valide";
-                                $i++;
-                                
-					
-				
+                                $i++; 	
 			}
 			
 			
@@ -117,12 +113,12 @@ include("verif.php");
 			if ($i==0)
 
 			{
-
+				
 				echo'<h1>Inscription terminée</h1>';
 
-				echo'<p>Bienvenue '.stripslashes(htmlspecialchars($_POST['mail'])).' vous êtes maintenant inscrit sur le forum</p>
-
-				<p>Cliquez <a href="./carmania.php">ici</a> pour revenir à la page d accueil</p>';
+				echo'<p>Bienvenue '.stripslashes(htmlspecialchars($_POST['LastName'])).' vous êtes maintenant membre de la Carmania family</p>
+					<p><b>DAMN</b></p>
+					<p>Vous allez être redirigé sur la page d accueil</p>';
 			
 				$query=$db->prepare('INSERT INTO utilisateur (adresse_mail_utilisateur, mot_de_passe, nom_utilisateur, prenom_utilisateur,
 				ville_utilisateur, date_inscription_utilisateur)
@@ -142,11 +138,13 @@ include("verif.php");
 
 				':temps' => $temps
 
-    ));
+				));
 				
 				
 				$_SESSION['mail']=$email;
-				
+				$_SESSION['id'] = 1;
+							
+				header("refresh: 2;url = carmania.php"); // redirige sur carmania.php après 2s			
 			}
 			
 			
