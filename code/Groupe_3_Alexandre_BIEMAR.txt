@@ -1,0 +1,28 @@
+ 
+ Avancement projet BIEMAR Alexandre - Groupe 3:
+ 
+ Terminé:
+ 
+	Base de données (avec Axel Fauconnier), fonctionelle, satisfait les besoins actuels, sujette à modification pour de futurs changements.
+ 
+ Avancé: 
+	Creation d'un header liant les différentes pages
+
+En cours: 
+	Mise en page du site et modification touchant à l'ergonomie de ce dernier sur la page d'accueil et de connexion (CSS et modifications légères des fichiers php)
+	
+	A terminer:
+	Mise en page et ergonomie du reste des pages du site
+
+
+Fichiers concernés:
+
+	carmania2.mcd
+	carmania2.sql
+	carmania.php
+	carmania_co.php
+	header.php
+	carmania.css
+	
+	
+La rédaction de la documentation est faite conjointement avec Axel Fauconnier et Sofiane Bessaï

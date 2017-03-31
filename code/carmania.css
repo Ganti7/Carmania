@@ -1,19 +1,11 @@
 html{
-    height: 100%
-    
+    height: 100% 
 }
 
 
 body {
     height: 100%;
-    
 }
-
-
-
-
-
-
 
 .fond {
         
@@ -22,35 +14,126 @@ body {
 	position: relative;
 	margin: auto;
 	text-align : center;
-
-
 }
 
-#haut{
+@-webkit-keyframes bouge {
+	from { bottom:0px; }
+	to { bottom:275px; }
+}
+
+/*
+header
+*/
+
+#header{
+	border: solid 5px red;
+	height: 100px;
+	position: fixed;
+	width: 98%;
+	min-width: 1000px;
+}
+
+#banniere{
 	border: 5px solid #2b5922;
 	background-image:url("road.jpg");
 	background-position: center;
-	position: relative;
-	left: 25%;
-	width: 50%;
+	position: fixed;
+	width: 40%;
+	min-width: 400px;
+	max-width: 600px;
 	height: 75px;
-
+	left: 350px;
+	top: 20px;
 }
 
 #logo{
 	position: center;
-	color : #28871c; 
+	color : #28871c;
     text-align: center;
 	text-shadow: 4px 2px #091e06;
 	font-size: 250%;
 	position: relative;
-	bottom: 25%;
+	bottom: 30%;
 }
 
+#boutonConnect {
+	background-color: #4CAF50; /* Green */
+	border: 2px solid #4CAF50;
+	color: white;
+	padding: 10px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	position: fixed;
+	transition-duration: 0.4s;
+	cursor: pointer;
+	right: 1%;
+	top: 35px;
+	right: 25px;
+}
+
+#boutonConnect:hover {
+    background-color: white;
+    color: #4CAF50;
+}
+
+.boutonsHeader{
+	background-color: #4CAF50; /* Green */
+	border: 2px solid #4CAF50;
+	color: white;
+	padding: 10px 32px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 16px;
+	transition-duration: 0.4s;
+	cursor: pointer;
+}
+
+.boutonsHeader:hover {
+    background-color: white;
+    color: #4CAF50;
+}
+
+#boutonAccueil{
+	position: fixed;
+	width:60px;
+	height: 80px;
+	padding-left: 5px;
+	right: 58%;
+	bottom: 113px;
+}
+
+#boutonAchats{
+	position: fixed;
+	padding: 10px 32px;
+	padding-right: 15px;
+	padding-left: 15px;
+	top: -2px;
+	right: 115%;
+	height: 50%;
+	padding-top: 5px;
+}
+
+#boutonLocations{
+	position: fixed;
+	padding: 10px 32px;
+	padding-right: 6px;
+	padding-left: 6px;
+	bottom: -2px;
+	right: 115%;
+	height: 50%;
+	padding-top: 5px;
+}
+
+/* 
+carmania.php 
+*/
+
 #boutons{
-	background-color: #252c2b;
+	background-color: #2e2e2e;
 	position: absolute;
-	border: 5px double red;
+	border: 5px double #2b5922;
 	width: 90%;
 	top: 25%;
 	height: 60%;
@@ -155,35 +238,18 @@ body {
   right: 0;
 }
 
-.boutonConnect {
-	background-color: #4CAF50; /* Green */
-	border: 2px solid #4CAF50;
-	color: white;
-	padding: 10px 32px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 16px;
-	margin: 4px 2px;
-	/*position: relative;*/
-	/*margin: auto;*/
-	/*bottom : 50px; */
-	/*left : 725px;*/
-	float: right;
+/* 
+carmania_co.php 
+*/
 
-	transition-duration: 0.4s;
-	cursor: pointer;
-
-}
-
-.boutonConnect:hover {
-    background-color: white;
-    color: #4CAF50;
-    
+#principal{
+	position: absolute;
+	top: 40%;
+	left: 30%;
+	width: 40%;
+	line-height: 250%;
+	border: double 5px #2b5922;
+	background-color: #2e2e2e;
 }
 
 
-@-webkit-keyframes bouge {
-	from { bottom:0px; }
-	to { bottom:275px; }
-}
