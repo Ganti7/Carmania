@@ -2,6 +2,9 @@
 
 session_start();
 
+		
+
+		
 include("functions.php");
 include("identifiants.php");
 include("verif.php");
@@ -23,10 +26,7 @@ include("constants.php");
 
 	<body>
 		<h1>Carmania</h1>
-		<?php
 		
-		if(!isset($page)) $page =$_SERVER["HTTP_REFERER"];
-		?>
 		
 		<?php
 		

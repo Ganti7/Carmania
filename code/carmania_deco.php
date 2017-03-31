@@ -1,7 +1,10 @@
 <?php
 session_start();
+session_destroy();
 include("identifiants.php");
 include("verif.php");
+include("constants.php");
+include("functions.php");
 ?>
 
 

@@ -1,8 +1,8 @@
 <?php
 
 session_start();
-
-
+if(!isset($page)) $page =$_SERVER["HTTP_REFERER"];
+include("functions.php");
 include("identifiants.php");
 include("verif.php");
 ?>
@@ -54,6 +54,7 @@ include("verif.php");
 			$mdp_erreur= NULL;
 			$email_erreur1= NULL;
 			$email_erreur2= NULL;
+                        $erreur_champ= NULL;
 			$i =0;
 			$temps = date("Y/m/d");
 			$prenom=$_POST['LastName'];
@@ -65,14 +66,27 @@ include("verif.php");
 			
 			// Verification du mdp
 			
+                        
+                        
+                        //verifmdp($mdp,$confirm,$i);
+                        
+                     if(empty($prenom) || empty($nom) || empty($ville))
+                     {
+                         echo "<p>ggse</p>";
+                         $erreur_champ= "Vous n'avez pas renseigné tout les champs";
+                         $i++;
+                         
+                         
+                     }
 			
-			if ($mdp != $confirm || empty($confirm) || empty($mdp))
+                     if ($mdp != $confirm || empty($confirm) || empty($mdp))
 			{
 				
 				$mdp_erreur = "Votre mot de passe et votre confirmation diffèrent, ou sont vides";
 				$i++;
 			}
-			
+                
+                
 			$query=$db->prepare('SELECT COUNT(*) AS nbr FROM utilisateur WHERE adresse_mail_utilisateur=:mail');
 			$query->bindValue(':mail',$email, PDO::PARAM_STR);
 			$query->execute();
@@ -92,6 +106,8 @@ include("verif.php");
 			if(!preg_match("#^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]{2,}\.[a-z]{2,4}$#", $email) || empty($email))
 			{
 				$email_erreur2= "Votre adresse E-mail n'a pas un format valide";
+                                $i++;
+                                
 					
 				
 			}
@@ -127,16 +143,10 @@ include("verif.php");
 				':temps' => $temps
 
     ));
-				/*$query->bindValue(':email', $email);
-				$query->bindValue(':mdp', $mdp);
-				$query->bindValue(':nom', $nom);
-				$query->bindValue(':prenom', $prenom);
-				$query->bindValue(':ville', $ville);
-				$query->bindValue(':temps', $temps);
-				$query->execute();*/
+				
 				
 				$_SESSION['mail']=$email;
-				//$query->CloseCursor();
+				
 			}
 			
 			
@@ -145,12 +155,13 @@ include("verif.php");
 				
 				echo'<h1>Inscription interrompue</h1>';
 
-				echo'<p>Une ou plusieurs erreurs se sont produites pendant l incription</p>';
+				echo'<p>Une ou plusieurs erreurs se sont produites pendant l\'incription</p>';
 
 				echo'<p>'.$i.' erreur(s)</p>';
 				echo'<p>'.$email_erreur1.'<p>';
 				echo'<p>'.$email_erreur2.'<p>';
 				echo'<p>'.$mdp_erreur.'<p>';
+                                echo'<p>'.$erreur_champ.'<p>';
 				echo'<p>Cliquez <a href="./carmania_register.php">ici</a> pour recommencer</p>';
 				
 			}
