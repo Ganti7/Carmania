@@ -73,6 +73,9 @@ include("constants.php");
 					$_SESSION['mail'] = $data['adresse_mail_utilisateur'];
 					//$page = htmlspecialchars($_POST['page']);
 					$_SESSION['id'] =1;
+					
+					header("Location: carmania.php"); // redirection
+					
 					$message = '<p>Bienvenue '.$data['prenom_utilisateur'].', 
 					vous êtes maintenant connecté!</p>
 					<p>Cliquez <a href="'.$page.'">ici</a> 

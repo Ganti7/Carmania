@@ -33,6 +33,7 @@ include("functions.php");
 		?>
 		
 		<?php
+					header("Location: carmania.php"); // redirection
                     echo '<p>Vous êtes à présent déconnecté <br />
                     Cliquez <a href="'.htmlspecialchars($_SERVER['HTTP_REFERER']).'">ici</a> 
                     pour revenir à la page précédente.<br />
