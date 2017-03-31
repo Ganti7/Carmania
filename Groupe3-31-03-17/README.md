@@ -14,5 +14,6 @@
   Sofiane :
   
      - Affichage du catalogue d'achat
-     
+     - Travail sur le profil utilisateur
+     - Travail sur la connexion/déconnexion
     
