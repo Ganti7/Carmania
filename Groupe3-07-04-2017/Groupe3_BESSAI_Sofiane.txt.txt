@@ -1,0 +1,38 @@
+ Avancement dans le projet (pas fait, commencé, avancé, terminé).
+ 
+ terminé:
+ connexion (niveau rouge) <-- pas d'affichage connecté après connexion
+ inscription (niveau rouge) <-- pas d'affichage 
+ 
+ avancé:
+ catalogue des voitures disponible a l'achat  (niveau rouge)
+ 
+ pas terminé:
+ achat voiture : l'utilisateur rentre ses coordonnées et on enleve la disponibilité de la voiture (niveau rouge)
+ catalogue des voitures disponible en location(niveau rouge)
+ achat/ location entre particulier(niveau vert)
+ 
+ 
+ 
+ commencé:
+ achat voiture : l'utilisateur rentre ses coordonnées et on enleve la disponibilité de la voiture (niveau rouge)
+ 
+ 
+ 
+  	
+	carmania.css 	(Alexandre)
+	carmania.php 	 	
+	carmania_co.php 	
+	carmania_deco.php 	
+	carmania_register.php 
+	constants.php 	
+	functions.php 	
+	identifiants.php 	
+	carmania_catalogue_a.php
+	carmania_profil.php
+	verif.php
+ 
+ 
+	base de données : pas de travail
+	
+	on écris la documentation ensemble

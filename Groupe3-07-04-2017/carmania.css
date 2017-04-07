@@ -1,0 +1,189 @@
+html{
+    height: 100%
+    
+}
+
+
+body {
+    height: 100%;
+    
+}
+
+
+
+
+
+
+
+.fond {
+        
+	background-color : #1e2020;
+	font-family : Caflisch Script Pro, cursive;
+	position: relative;
+	margin: auto;
+	text-align : center;
+
+
+}
+
+#haut{
+	border: 5px solid #2b5922;
+	background-image:url("road.jpg");
+	background-position: center;
+	position: relative;
+	left: 25%;
+	width: 50%;
+	height: 75px;
+
+}
+
+#logo{
+	position: center;
+	color : #28871c; 
+    text-align: center;
+	text-shadow: 4px 2px #091e06;
+	font-size: 250%;
+	position: relative;
+	bottom: 25%;
+}
+
+#boutons{
+	background-color: #252c2b;
+	position: absolute;
+	border: 5px double red;
+	width: 90%;
+	top: 25%;
+	height: 60%;
+	left: 5%;
+}
+
+.bouton_a {
+  
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #33cc00;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 35%;
+  height:25%;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  position: absolute;
+  top: 30%;
+  left: 5%;
+  /*right: 1000px;*/
+  float: left;
+  
+}
+
+
+.bouton_a span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.bouton_a span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  /*top: 0;
+  right: -20px;*/
+  transition: 0.5s;
+}
+
+.bouton_a:hover span {
+  padding-right: 25px;
+}
+
+.bouton_a:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.bouton_l {
+  
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #33cc00;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 35%;
+  height:25%;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  position: absolute;
+  top: 30%;
+  right: 5%;
+  /*right: 1000px;*/
+  float: right;
+  
+}
+
+
+.bouton_l span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.bouton_l span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  /*top: 0;
+  right: -20px;*/
+  transition: 0.5s;
+}
+
+.bouton_l:hover span {
+  padding-right: 25px;
+}
+
+.bouton_l:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.boutonConnect {
+	background-color: #4CAF50; /* Green */
+	border: 2px solid #4CAF50;
+	color: white;
+	padding: 10px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	/*position: relative;*/
+	/*margin: auto;*/
+	/*bottom : 50px; */
+	/*left : 725px;*/
+	float: right;
+
+	transition-duration: 0.4s;
+	cursor: pointer;
+
+}
+
+.boutonConnect:hover {
+    background-color: white;
+    color: #4CAF50;
+    
+}
+
+
+@-webkit-keyframes bouge {
+	from { bottom:0px; }
+	to { bottom:275px; }
+}
