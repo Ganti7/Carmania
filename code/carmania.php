@@ -31,6 +31,7 @@ include("verif.php");
                 else
                 {
                     echo '<a href="carmania_deco.php"><button class="boutonConnect">Déconnexion</button></a>';
+					echo '<a href="carmania_profil.php"><button class="boutonConnect">Profil</button></a>';
                 }
                 
 		?>
@@ -38,8 +39,8 @@ include("verif.php");
 		<span  class= "test">
 		</span>
 		<div id="boutons">
-			<a href="carmania_profil.php"><button class="bouton_a" ><span>Achat </span></button></a>
-			<a href="carmania_co.php"><button class="bouton_l" ><span>Location</span></button></a>
+			<a href="carmania_catalogue_a.php"><button class="bouton_a" ><span>Achat </span></button></a>
+			<a href="carmania_catalogue_l.php"><button class="bouton_l" ><span>Location</span></button></a>
 		</div>	
 
         
