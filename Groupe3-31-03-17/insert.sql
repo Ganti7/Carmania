@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Ven 31 Mars 2017 à 08:29
+-- Généré le :  Ven 07 Avril 2017 à 12:47
 -- Version du serveur :  5.7.11
 -- Version de PHP :  5.6.18
 
@@ -28,6 +28,28 @@ INSERT INTO `camion_achat` (`poids`, `volume`, `hauteur`, `idVehicule_achat`) VA
 (1200, 7, '1.971m', 5);
 
 --
+-- Contenu de la table `camion_location`
+--
+
+INSERT INTO `camion_location` (`poids`, `volume`, `hauteur`, `idVehicule_location`) VALUES
+(1200, 7, '1.971m', 2);
+
+--
+-- Contenu de la table `utilisateur`
+--
+
+INSERT INTO `utilisateur` (`adresse_mail_utilisateur`, `mot_de_passe`, `nom_utilisateur`, `prenom_utilisateur`, `ville_utilisateur`, `date_inscription_utilisateur`) VALUES
+('axelf@gmail.com', 'good', 'Fauconnier', 'Axel', 'Marseille', '2017-03-31'),
+('babtou@ken.fr', 'idk', 'bab', 'tout', 'ville', '2017-03-31'),
+('boii@gmail.com', 'missile', 'Cast', 'Fidel', 'Cuba', '2017-03-31'),
+('carmania@pro.fr', 'idk', 'Car', 'Mania', 'cary', '2017-03-31'),
+('commu@yahoo.fr', 'kompot', 'Stal', 'Joseph', 'Moscou', '2017-03-31'),
+('coucou@yahoo.fr', 'idk', 'couille', 'bite', 'kool', '2017-03-31'),
+('jean@gmail.com', 'idk', 'Moulin', 'Jean', 'France', '2017-03-31'),
+('leonel@yahoo.fr', 'hola', 'Trot', 'Leon', 'SaoPaulo', '2017-03-31'),
+('mmp@live.fr', 'idk', 'Petaing', 'MarionMarechal', 'Vichy', '2017-03-31');
+
+--
 -- Contenu de la table `vehicule_achat`
 --
 
@@ -39,6 +61,14 @@ INSERT INTO `vehicule_achat` (`idVehicule_achat`, `prix_achat`, `carburant`, `pu
 (5, '20600.000', 'Diesel', 95, 'Renault', 'Trafic', 'Manuelle', 'Trafic.png', 1, 160, 6);
 
 --
+-- Contenu de la table `vehicule_location`
+--
+
+INSERT INTO `vehicule_location` (`idVehicule_location`, `prix_journee`, `carburant`, `puissance`, `marque`, `modele`, `transmission`, `chemin_image`, `climatisation`, `empreinte_carbone`, `nb_disponible`, `nb_stock`) VALUES
+(1, '10.000', 'S95', 70, 'Renault', 'Twingo Life', 'Manuelle', 'TwingoLife.jpg', 1, 112, 6, 6),
+(2, '13.000', 'Diesel', 95, 'Renault', 'Trafic', 'Manuelle', 'Trafic.png', 1, 160, 3, 3);
+
+--
 -- Contenu de la table `voiture_achat`
 --
 
@@ -47,6 +77,13 @@ INSERT INTO `voiture_achat` (`portes`, `couleur`, `idVehicule_achat`) VALUES
 (3, 'Blanche', 2),
 (5, 'Gris foncé', 3),
 (5, 'Blanche', 4);
+
+--
+-- Contenu de la table `voiture_location`
+--
+
+INSERT INTO `voiture_location` (`portes`, `couleur`, `idVehicule_location`) VALUES
+(3, 'Blanche', 1);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
