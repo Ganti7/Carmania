@@ -125,24 +125,24 @@ header
 }
 
 #boutonAchats{
-	position: fixed;
+	position: absolute;
 	padding: 10px 32px;
 	padding-right: 15px;
 	padding-left: 15px;
-	left: 280px;
-	top: 18px;
+	left: 270px;
+	top: 5px;
 	height: 40px;
 	width: 100px;
 	padding-top: 5px;
 }
 
 #boutonLocations{
-	position: fixed;
+	position: absolute;
 	padding: 10px 32px;
 	padding-right: 6px;
 	padding-left: 6px;
-	left: 280px;
-	top: 65px;
+	left: 270px;
+	top: 52px;
 	height: 40px;
 	width: 100px;
 	padding-top: 5px;
