@@ -2,6 +2,7 @@
 session_start();
 include("identifiants.php");
 include("verif.php");
+include("header.php");
 ?>
 
 <!DOCTYPE html>
@@ -16,9 +17,7 @@ include("verif.php");
 		</head>
 
 	<body>
-		<div id="haut">
-			<h1 id="logo"> Carmania </h1>
-		</div>
+		
 		
 		<?php
 			$req=$db->query("SELECT * FROM vehicule_achat"); 
@@ -38,7 +37,17 @@ include("verif.php");
 				echo'<p> Prix : '.$donnees['prix_achat'].'</p>';
 				echo'<p> Climatisation : oui</p>';
 				
-				echo '<a href=""><button class="boutonConnect">Acheter</button></a>';
+				if($mail=='')
+				{
+					echo '<a href="carmania_co.php"><button class="boutonConnect">Acheter</button></a>';
+			
+				}
+				else
+				{
+					echo '<a href="carmania_achat.php"><button class="boutonConnect">Acheter</button></a>';
+					
+				}
+				
 				
 				
 				echo'</div>';

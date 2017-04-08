@@ -6,6 +6,7 @@ if(!isset($page)) $page =$_SERVER["HTTP_REFERER"];
 include("functions.php");
 include("identifiants.php");
 include("verif.php");
+include("header.php");
 ?>
 
 
@@ -22,7 +23,7 @@ include("verif.php");
 		</head>
 
 	<body>
-		<h1>Carmania</h1>
+		
 		<div>
 		
 		<?php

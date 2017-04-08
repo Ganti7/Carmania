@@ -1,7 +1,7 @@
 <?php
 try
 {
-$db = new PDO('mysql:host=localhost;dbname=carmania', 'root', 'root');
+$db = new PDO('mysql:host=localhost;dbname=carmania', 'root', '');
 }
 catch (Exception $e)
 {

@@ -2,6 +2,7 @@
 session_start();
 include("identifiants.php");
 include("verif.php");
+include("header.php");
 ?>
 
 <!DOCTYPE html>
@@ -16,23 +17,11 @@ include("verif.php");
 		</head>
 
 	<body>
-		<div id="haut">
-			<h1 id="logo"> Carmania </h1>
-		</div>
+		
 		
 		<?php
 		
-		if($mail=='')
-		{
-			echo '<a href="carmania_co.php"><button class="boutonConnect">Connexion</button></a>';
 		
-		}
-                
-                else
-                {
-                    echo '<a href="carmania_deco.php"><button class="boutonConnect">Déconnexion</button></a>';
-					echo '<a href="carmania_profil.php"><button class="boutonConnect">Profil</button></a>';
-                }
                 
 		?>
 

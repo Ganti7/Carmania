@@ -7,7 +7,7 @@
 		<div id='boutonsGauche'>
 					<a href='carmania.php'><button class='boutonsHeader' id='boutonAccueil'>Accueil</button></a>
 					<a href='carmania_catalogue_a.php'><button class='boutonsHeader' id='boutonAchats'>Achats</button></a>
-					<a href='carmania.php'><button class='boutonsHeader' id='boutonLocations'>Locations</button></a>
+					<a href='carmania_catalogue_l.php'><button class='boutonsHeader' id='boutonLocations'>Locations</button></a>
 		</div>
 	
 	<?php

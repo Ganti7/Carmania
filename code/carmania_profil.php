@@ -2,7 +2,7 @@
 session_start();
 include("identifiants.php");
 include("verif.php");
-
+include("header.php");
 ?>
 
 <!DOCTYPE html>
@@ -17,9 +17,7 @@ include("verif.php");
 		</head>
 
 	<body>
-		<div id="haut">
-			<h1 id="logo"> Carmania </h1>
-		</div>
+		
 		
 		<?php
 		
@@ -31,7 +29,7 @@ include("verif.php");
                 
                 else
                 {
-                    echo '<a href="carmania_deco.php"><button class="boutonConnect">Déconnexion</button></a>';
+                    
                     $query=$db->prepare('SELECT adresse_mail_utilisateur, nom_utilisateur, prenom_utilisateur,
                              ville_utilisateur, date_inscription_utilisateur FROM utilisateur WHERE adresse_mail_utilisateur=:mail');
                     $query->bindValue(':mail',$mail,PDO::PARAM_STR);

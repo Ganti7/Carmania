@@ -5,6 +5,7 @@ include("functions.php");
 include("identifiants.php");
 include("verif.php");
 include("constants.php");
+include("header.php");
 ?>
 
 
@@ -21,7 +22,7 @@ include("constants.php");
 		</head>
 
 	<body>
-		<h1>Carmania</h1>
+		
 		
 		
 		<?php

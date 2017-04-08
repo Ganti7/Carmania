@@ -2,6 +2,7 @@
 session_start();
 include("identifiants.php");
 include("verif.php");
+include("header.php");
 ?>
 
 <!DOCTYPE html>
@@ -16,9 +17,7 @@ include("verif.php");
 		</head>
 
 	<body>
-		<div id="haut">
-			<h1 id="logo"> Carmania </h1>
-		</div>
+		
 		
 		<?php
 			$req=$db->query("SELECT * FROM vehicule_location"); 
