@@ -1,23 +1,18 @@
-## CODE
-
-
-Ce dossier stocke les fichier html,php et css du site carmania :
-
-
-- carmania.css : feuille de style du site web.
-
-- carmania.php : page d'accueil du site, permet d'accéder à la page de connexion, d'aller voir le catalogue des voitures disponible à l'achat ou à la location.
-
-- carmania_co.php : page de connexion du site, on rentre son adresse email ainsi que son mot de passe et le site vérifie si le compte exite, sinon la page contient un lien vers une page d'inscription.
-
-- carmania_deco.php : page de déconnexion, à compléter.
-
-- carmania_register.php : page d'inscription au site, l'utilisateur remplit un formulaire , il doit taper 2 fois son mot de passe et les 2 doivent correspondre, l'email ne doit pas déjà être présent dans la base de données sinon le site indique qu'il y a un problème.Si tout est en ordre les coordonnées de l'utilisateur sont rajouté à la base de données et il est redirigé vers la page d'accueil.
-
-- constants.php : fichier contenant les constantes d'erreur et les constantes concernant le niveau de l'utilsateur (admin,inscrit,visiteur) à discuter.
-
-- functions.php : fichier contenant la fonction d'erreur et où on ajoutera les autres fonctions utiles au site.
-
-- identifiants.php : fichier permettant de se connecter à la base de données.
-
-- verif.php : fichier contenant les variables de session de l'utilisateur, connaitre son mail à tout moment ou savoir si il est connecté ou pas.
+Sofiane :
+ 
+   Page d'achat d'un véhicule, quand l'utilisateur choisit le modèle désiré sur la page du catalogue il est redirigé sur une page où
+   il peut rentrer ses coordonnées (adresse,numéro de carte bleue...) et ainsi procéder au paiement. Le site est censé mettre a jour
+   la base de données en décrémentant le nombre de voiture de ce modèle disponible.
+   
+   
+ Axel :
+ 
+   Page de profil , quand l'utilisateur est connecté il peut accéder à son profil et modifier ses informations, la pluparts sont pré-  
+   remplies si il désire seulement modifier une partie. La page vérifie si tout les champs sont remplies , si le mail rentré est 
+   disponible et dans un format valide. Puis si l'ancien mot de passe et le bon et si le nouveau mot de passe correspond à la 
+   confirmation.
+   
+ Alexandre :
+   
+   CSS du site, le site possède désormais un header qui permet d'accéder plus facilement à n'importe quel page du site plus facilement
+   Catalogue des véhicule disponible à la location.
