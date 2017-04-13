@@ -1,0 +1,286 @@
+html{
+    height: 100% 
+}
+
+
+body {
+    height: 100%;
+}
+
+.fond {
+        
+	background-color : #1e2020;
+	font-family : Caflisch Script Pro, cursive;
+	/*position: relative;
+	margin: auto;
+	text-align : center;*/
+}
+
+#centrer {
+	position: relative;
+	margin: auto;
+	text-align : center;
+}
+.color {
+	background-color : #1e2020;
+}
+
+@-webkit-keyframes bouge {
+	from { bottom:0px; }
+	to { bottom:275px; }
+}
+
+/*
+header
+*/
+
+#header{
+	border: double 5px #2b5922;
+	height: 100px;
+	/*position: relative;*/
+	width: 99%;
+	/*min-width: 1000px;*/
+}
+
+#banniere{
+	border: 5px solid #2b5922;
+	background-image:url("road.jpg");
+	background-position: center;
+	/*position: absolute;*/
+	width: 500px;
+	height: 75px;
+	/*left: 450px;
+	top: 5px;*/
+}
+
+#logo{
+	position: center;
+	color : #28871c;
+    text-align: center;
+	text-shadow: 4px 2px #091e06;
+	font-size: 250%;
+	position: relative;
+	/*bottom: 30%;*/
+}
+
+#boutonConnect {
+	background-color: #4CAF50; /* Green */
+	border: 2px solid #4CAF50;
+	color: white;
+	padding: 10px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	position: absolute;*/
+	transition-duration: 0.4s;
+	cursor: pointer;
+	right: 1%;
+	top: 30px;
+	width: 150px;
+}
+
+#boutonConnect:hover {
+    background-color: white;
+    color: #4CAF50;
+}
+
+#boutonProfil {
+	background-color: #4CAF50; /* Green */
+	border: 2px solid #4CAF50;
+	color: white;
+	padding: 10px 32px;
+	text-align: center;
+	text-decoration: none;
+	/display: inline-block;
+	font-size: 16px;
+	position: absolute;
+	transition-duration: 0.4s;
+	cursor: pointer;
+	right: 175px;
+	top: 30px;
+}
+
+#boutonProfil:hover {
+    background-color: white;
+    color: #4CAF50;
+}
+
+.boutonsHeader{
+	background-color: #4CAF50; /* Green */
+	border: 2px solid #4CAF50;
+	color: white;
+	padding: 10px 32px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 16px;
+	transition-duration: 0.4s;
+	cursor: pointer;
+	position: absolute;
+}
+
+.boutonsHeader:hover {
+    background-color: white;
+    color: #4CAF50;
+}
+
+#boutonAccueil{
+	position: absolute;
+	width:60px;
+	height: 88px;
+	padding-left: 5px;
+	left: 375px;
+	top: 5px;
+}
+
+#boutonAchats{
+	position: absolute;
+	padding: 10px 32px;
+	padding-right: 15px;
+	padding-left: 15px;
+	left: 270px;
+	top: 5px;
+	height: 40px;
+	width: 100px;
+	padding-top: 5px;
+}
+
+#boutonLocations{
+	position: absolute;
+	padding: 10px 32px;
+	padding-right: 6px;
+	padding-left: 6px;
+	left: 270px;
+	top: 52px;
+	height: 40px;
+	width: 100px;
+	padding-top: 5px;
+}
+
+/* 
+carmania.php 
+*/
+
+#boutons{
+	background-color: #2e2e2e;
+	position: absolute;
+	border: 5px double #2b5922;
+	width: 90%;
+	top: 25%;
+	height: 60%;
+	left: 5%;
+}
+
+.bouton_a {
+  
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #33cc00;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 35%;
+  height:25%;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  position: absolute;
+  top: 30%;
+  left: 5%;
+  /*right: 1000px;*/
+  float: left;
+  
+}
+
+
+.bouton_a span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.bouton_a span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  /*top: 0;
+  right: -20px;*/
+  transition: 0.5s;
+}
+
+.bouton_a:hover span {
+  padding-right: 25px;
+}
+
+.bouton_a:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.bouton_l {
+  
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #33cc00;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 35%;
+  height:25%;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  position: absolute;
+  top: 30%;
+  right: 5%;
+  /*right: 1000px;*/
+  float: right;
+  
+}
+
+
+.bouton_l span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.bouton_l span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  /*top: 0;
+  right: -20px;*/
+  transition: 0.5s;
+}
+
+.bouton_l:hover span {
+  padding-right: 25px;
+}
+
+.bouton_l:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+/* 
+carmania_co.php 
+*/
+
+#principal{
+	position: absolute;
+	top: 40%;
+	left: 30%;
+	width: 40%;
+	line-height: 250%;
+	border: double 5px #2b5922;
+	background-color: #2e2e2e;
+}
+
+
