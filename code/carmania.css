@@ -11,9 +11,18 @@ body {
         
 	background-color : #1e2020;
 	font-family : Caflisch Script Pro, cursive;
+	/*position: relative;
+	margin: auto;
+	text-align : center;*/
+}
+
+#centrer {
 	position: relative;
 	margin: auto;
 	text-align : center;
+}
+.color {
+	background-color : #1e2020;
 }
 
 @-webkit-keyframes bouge {
@@ -28,20 +37,20 @@ header
 #header{
 	border: double 5px #2b5922;
 	height: 100px;
-	position: relative;
+	/*position: relative;*/
 	width: 99%;
-	min-width: 1400px;
+	/*min-width: 1000px;*/
 }
 
 #banniere{
 	border: 5px solid #2b5922;
 	background-image:url("road.jpg");
 	background-position: center;
-	position: absolute;
+	/*position: absolute;*/
 	width: 500px;
 	height: 75px;
-	left: 450px;
-	top: 5px;
+	/*left: 450px;
+	top: 5px;*/
 }
 
 #logo{
@@ -51,7 +60,7 @@ header
 	text-shadow: 4px 2px #091e06;
 	font-size: 250%;
 	position: relative;
-	bottom: 30%;
+	/*bottom: 30%;*/
 }
 
 #boutonConnect {
@@ -61,9 +70,9 @@ header
 	padding: 10px 32px;
 	text-align: center;
 	text-decoration: none;
-	/display: inline-block;
+	display: inline-block;
 	font-size: 16px;
-	position: absolute;
+	position: absolute;*/
 	transition-duration: 0.4s;
 	cursor: pointer;
 	right: 1%;

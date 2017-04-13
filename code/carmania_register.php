@@ -17,14 +17,15 @@ include("header.php");
 
 		<head>
 
-			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
 
 			<link rel="stylesheet" type="text/css" href="carmania.css">
+			<link rel="stylesheet" type="text/css"  href="w3.css">
 		</head>
 
 	<body>
 		
-		<div>
+		<div id="centrer">
 		
 		<?php
 		if ($id!=0) erreur(ERR_IS_CO);
@@ -32,15 +33,16 @@ include("header.php");
 		if (empty($_POST['mail']))
 			
 		{
-		
+			echo'<div class="w3-container w3-green">';
 			echo '<h2>Inscription<h2>';
+			echo'</div>';
 			echo'<form method="post" action="carmania_register.php" enctype="multipart/form-data">
-			<fieldset><label for="FirstName">Nom :  </label><input class="input" type="text" name="FirstName"><br>
-			<label for="LastName">Prénom : </label><input class="input" type="text" name="LastName"><br>
-			<label for="mail">Adresse mail : </label><input class="input" type="text" name="mail"><br>
-			<label for="Password">Mot de passe :</label><input class="input" type="password" name="Password"><br>
-			<label for="Confirmation">Retaper le mot de passe :</label><input class="input" type="password" name="Confirmation"><br>
-			<label for="City">Ville : </label><input class="input" type="text" name="City"><br>
+			<fieldset><label for="FirstName" class="w3-text-green">Nom :  </label><input class="input" type="text" name="FirstName"><br>
+			<label for="LastName" class="w3-text-green">Prénom : </label><input class="input" type="text" name="LastName"><br>
+			<label for="mail" class="w3-text-green">Adresse mail : </label><input class="input" type="text" name="mail"><br>
+			<label for="Password" class="w3-text-green">Mot de passe : </label><input class="input" type="password" name="Password"><br>
+			<label for="Confirmation" class="w3-text-green">Retaper le mot de passe : </label><input class="input" type="password" name="Confirmation"><br>
+			<label for="City" class="w3-text-green">Ville : </label><input class="input" type="text" name="City"><br>
 			</fieldset>
 			<p><input type="submit" value="S\'inscrire" /></p></form>';
 			
@@ -56,7 +58,7 @@ include("header.php");
 			$mdp_erreur= NULL;
 			$email_erreur1= NULL;
 			$email_erreur2= NULL;
-                        $erreur_champ= NULL;
+            $erreur_champ= NULL;
 			$i =0;
 			$temps = date("Y/m/d");
 			$prenom=$_POST['LastName'];
@@ -70,16 +72,16 @@ include("header.php");
                         
                         //verifmdp($mdp,$confirm,$i);
                         
-                     if(empty($prenom) || empty($nom) || empty($ville))
-                     {
-                         echo "<p>ggse</p>";
-                         $erreur_champ= "Vous n'avez pas renseigné tout les champs";
-                         $i++;
+            if(empty($prenom) || empty($nom) || empty($ville))
+            {
+                         
+                $erreur_champ= "Vous n'avez pas renseigné tout les champs";
+                $i++;
                          
                          
-                     }
+            }
 			
-                     if ($mdp != $confirm || empty($confirm) || empty($mdp))
+            if ($mdp != $confirm || empty($confirm) || empty($mdp))
 			{
 				
 				$mdp_erreur = "Votre mot de passe et votre confirmation diffèrent, ou sont vides";
@@ -92,7 +94,7 @@ include("header.php");
 			$query->execute();
 			$mail_free=($query->fetchColumn()==0)?1:0;
 			$query->CloseCursor();
-			https://www.europcar.fr/
+			
 			
 			// Verification du mail
 			if(!$mail_free)
@@ -122,8 +124,8 @@ include("header.php");
 					<p>Vous allez être redirigé sur la page d accueil</p>';
 			
 				$query=$db->prepare('INSERT INTO utilisateur (adresse_mail_utilisateur, mot_de_passe, nom_utilisateur, prenom_utilisateur,
-				ville_utilisateur, date_inscription_utilisateur)
-				VALUES (:email, :mdp, :nom, :prenom, :ville, :temps)' );
+				ville_utilisateur, date_inscription_utilisateur, droit)
+				VALUES (:email, :mdp, :nom, :prenom, :ville, :temps, :droit)' );
 				
 				$query->execute(array(
 
@@ -137,11 +139,13 @@ include("header.php");
 
 				':ville' => $_POST['City'],
 
-				':temps' => $temps
+				':temps' => $temps,
+				
+				':droit' => 0;
 
 				));
 				
-				
+				$query->CloseCursor();
 				$_SESSION['mail']=$email;
 				$_SESSION['id'] = 1;
 							
@@ -152,16 +156,16 @@ include("header.php");
 			else
 			{
 				
-				echo'<h1>Inscription interrompue</h1>';
+				echo'<p class="w3-text-green>Inscription interrompue</p>';
 
-				echo'<p>Une ou plusieurs erreurs se sont produites pendant l\'incription</p>';
+				echo'<p class="w3-text-green>Une ou plusieurs erreurs se sont produites pendant l\'incription</p>';
 
-				echo'<p>'.$i.' erreur(s)</p>';
-				echo'<p>'.$email_erreur1.'<p>';
-				echo'<p>'.$email_erreur2.'<p>';
-				echo'<p>'.$mdp_erreur.'<p>';
-                                echo'<p>'.$erreur_champ.'<p>';
-				echo'<p>Cliquez <a href="./carmania_register.php">ici</a> pour recommencer</p>';
+				echo'<p class="w3-text-green>'.$i.' erreur(s)</p>';
+				echo'<p class="w3-text-green>'.$email_erreur1.'<p>';
+				echo'<p class="w3-text-green>'.$email_erreur2.'<p>';
+				echo'<p class="w3-text-green>'.$mdp_erreur.'<p>';
+                echo'<p class="w3-text-green>'.$erreur_champ.'<p>';
+				echo'<p class="w3-text-green">Cliquez <a class="w3-text-blue" href="./carmania_register.php">ici</a> pour recommencer</p>';
 				
 			}
 		}
