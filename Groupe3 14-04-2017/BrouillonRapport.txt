@@ -1,0 +1,55 @@
+intro : decrire chaque chapitre
+
+Background : 
+
+
+Motivation :
+
+	Notre motivation principale pour ce projet était de travailler sur le web, d'apprendre à programmer en php car la web tiens de nos jours une place très importante dans nos sociétés,
+	c'est avec cet objectif que nous avons décidé de créer un site d'achat standard.
+	PARCE QUE C4EST NOTRE PROJET !
+	
+Objectifs :
+
+	PARCE QUE C4EST NOTRE PROJET
+	Réaliser un website dynamique avec base de données, où l'on pourrait vendre/acheter des véhicules, s'inscrire
+	-Se familiariser avec php, le web
+	-Manipuler une base de données
+	
+	
+Méthodologie :
+	on s'est partagé le travail selon les points forts de chacun
+	on a divisé le travail selon l'importance, pour ainsi se concentrer sur les fonctionnalités coeur 
+	
+Design Principles :
+
+	
+Problemes rencontré :
+	
+	Grosse difficulté à organiser le travail, du coup double travail vers la fin
+	Filtre véhicules, jquery pour lancer script php
+	design du site , du coup framework
+	
+	Novice du php, non utilisation de frameword tel que Symfonia ou Laravel, donc compliqué+apprentissage
+	saut into the inconnue
+	Beaucoup de nouvelles techniques à assimilé et à maitriser
+	
+Evaluation of objectives and aims :
+
+	Nous avons finalement réussi à mener à bien notre projet,
+	
+Evaluation of project management 
+
+	On a commencé par travailler sur la BDD, puis nous avons commencé les fonctionnalités core
+		
+	
+Future Work :
+
+	-Historique réclamation de l'utilisateur, et résolu par l'utilisateur
+	-utilisateur peut retirer un véhicule qu'il a mis en vente/location (delete)
+	-forfait de location
+	-pagination
+	
+	biblio
+		github lien
+		scrum
