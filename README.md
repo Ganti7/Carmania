@@ -8,13 +8,18 @@ Liste des choses à faire pour me terminer :
 - [x] Planning
 - [x] Organisation github
 - [x] Prototype mcd
-- [ ] Création données
+- [x] Création données
 - [x] Définir design du site
 - [x] Connexion au site
 - [x] Inscription
-- [ ] Affichage voiture
+- [x] Affichage voiture
 - [x] Acheter ou louer
+- [x] Profil
+- [x] Historique
+- [ ] Historique réclam
+- [ ] Forfait location
+- [ ] 
 
 Si on a le temps : 
 - [ ] S'occuper de la sécurité
-- [ ] Acheter ou louer entre particuliers
+- [x] Acheter ou louer entre particuliers
