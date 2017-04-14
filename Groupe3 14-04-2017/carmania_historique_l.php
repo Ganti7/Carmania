@@ -91,7 +91,7 @@ include("header.php");
 					echo'<p class="w3-text-green"> Carburant : '.$attr['carburant'].'</p>';
 					echo'<p class="w3-text-green"> Transmission : '.$attr['transmission'].'</p>';
 					echo'<p class="w3-text-green"> Empreinte carbone : '.$attr['empreinte_carbone'].'</p>';
-					echo'<p class="w3-text-green"> Prix : '.$attr['prix_achat'].'</p>';
+					echo'<p class="w3-text-green"> Prix : '.$attr['prix_journee'].'</p>';
 					if($attr['climatisation']==1)
 						echo'<p class="w3-text-green"> Climatisation : oui</p>';
 					else

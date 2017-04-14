@@ -141,7 +141,7 @@ include("header.php");
 
 				':temps' => $temps,
 				
-				':droit' => 0;
+				':droit' => 0
 
 				));
 				

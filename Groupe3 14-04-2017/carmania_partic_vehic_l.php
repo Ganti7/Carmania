@@ -28,7 +28,7 @@ include("header.php");
 		$date_fin=$donnees['date_fin'];*/
 		$rien=0;
 		echo'<div class="w3-container w3-green">';
-		echo'<h1>Historique</h1>';
+		echo'<h1>Mes véhicules</h1>';
 		echo'</div>';
 		echo'<div class="w3-show-inline-block">';
 		echo'<div class="w3-bar w3-light-green">';
@@ -56,17 +56,17 @@ include("header.php");
 				//$attr=$requete->fetch();
 				echo'<div>'; 
 				echo'<img src="'.$donnees['chemin_image'].'"</img>';
-				echo'<p> Marque : '.$donnees['marque'].'</p>';
-				echo'<p> Modèle : '.$donnees['modele'].'</p>';
-				echo'<p> Puissance : '.$donnees['puissance'].'</p>';
-				echo'<p> Carburant : '.$donnees['carburant'].'</p>';
-				echo'<p> Transmission : '.$donnees['transmission'].'</p>';
-				echo'<p> Empreinte carbone : '.$donnees['empreinte_carbone'].'</p>';
-				echo'<p> Prix : '.$donnees['prix_journee'].'</p>';
-				if($attr['climatisation']==1)
-					echo'<p> Climatisation : oui</p>';
+				echo'<p class="w3-text-green"> Marque : '.$donnees['marque'].'</p>';
+				echo'<p class="w3-text-green"> Modèle : '.$donnees['modele'].'</p>';
+				echo'<p class="w3-text-green"> Puissance : '.$donnees['puissance'].'</p>';
+				echo'<p class="w3-text-green"> Carburant : '.$donnees['carburant'].'</p>';
+				echo'<p class="w3-text-green"> Transmission : '.$donnees['transmission'].'</p>';
+				echo'<p class="w3-text-green"> Empreinte carbone : '.$donnees['empreinte_carbone'].'</p>';
+				echo'<p class="w3-text-green"> Prix : '.$donnees['prix_journee'].'</p>';
+				if($donnees['climatisation']==1)
+					echo'<p class="w3-text-green"> Climatisation : oui</p>';
 				else
-					echo'<p> Climatisation : non</p>';
+					echo'<p class="w3-text-green"> Climatisation : non</p>';
 				
 				/*echo'<p> Début de la location : '.$donnees['date_debut'].'</p>';
 				echo'<p> Fin de la location : '.$donnees['date_fin'].'</p>';*/
@@ -75,13 +75,14 @@ include("header.php");
 				{
 					$requete=$db->query('SELECT * FROM loue WHERE idVehicule_location="'.$donnees['idVehicule_location'].'"'); 
 					$attr=$requete->fetch();
-					echo'<p> Loué du : '.$attr['date_debut'].' au : '.$attr['date_fin'].'</p>';
-					echo'<p> Par : '.$attr['adresse_mail_utilisateur'].'</p>';
+					echo'<p class="w3-text-green"> Loué du : '.$attr['date_debut'].' au : '.$attr['date_fin'].'</p>';
+					echo'<p class="w3-text-green"> Par : '.$attr['adresse_mail_utilisateur'].'</p>';
+					$requete->CloseCursor();
 				}
 					
 			
 		
-					$requete->CloseCursor();
+					
 			}
 		//}
 		if($rien==0)
