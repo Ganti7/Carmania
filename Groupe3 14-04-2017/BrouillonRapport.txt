@@ -2,6 +2,8 @@ intro : decrire chaque chapitre
 
 Background : 
 
+	Nous venons tous les 3 d'une L2 info, nous avons suivi le cours de devweb1, en L3 nous avons choisi de prendre l'option d'IA en lieu de devweb2
+
 
 Motivation :
 
