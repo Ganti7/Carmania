@@ -1,10 +1,10 @@
 <?php
-session_start();
-include("identifiants.php");
-include("verif.php");
-include("header.php");
-$_SESSION['i']=0;
-//$_SESSION['level']=NULL;
+	session_start();
+	include("identifiants.php");
+	include("verif.php");
+	include("header.php");
+	$_SESSION['i']=0;
+
 
 ?>
 
@@ -23,7 +23,7 @@ $_SESSION['i']=0;
 
 	<body>
 		
-		
+	
 		
 
 		
@@ -37,6 +37,5 @@ $_SESSION['i']=0;
 
 	</body>
 	
-	<?php //session_destroy();
-	?>
+	
 	

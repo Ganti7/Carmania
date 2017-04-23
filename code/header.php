@@ -3,8 +3,8 @@
 
 
 <div class="w3-container w3-center w3-margin w3-border w3-hover-border-green">
-		<div class="w3-display-container w3-text-white">
-			<img src="road.jpg" class="w3-image" style="width:17%" >
+	<div class="w3-display-container w3-text-white">
+		<img src="road.jpg" class="w3-image" style="width:17%" >
 			<div class="w3-display-middle w3-container w3-large"> 
 				<h2>Carmania</h2> 
 			</div>
@@ -24,26 +24,12 @@
                 
 		?>
 		<div class="w3-display-left">
-		<a href='carmania.php'><button class="w3-green w3-button">Accueil</button></a>
-		<a href='carmania_catalogue_a.php'><button class=" w3-green w3-button">Achats</button></a>
-		<a href='carmania_catalogue_l.php'><button class=" w3-green w3-button">Locations</button></a>
-		<a href='carmania_partic.php'><button class=" w3-green w3-button">Vendre</button></a>
+			<a href='carmania.php'><button class="w3-green w3-button">Accueil</button></a>
+			<a href='carmania_catalogue_a.php'><button class=" w3-green w3-button">Achats</button></a>
+			<a href='carmania_catalogue_l.php'><button class=" w3-green w3-button">Locations</button></a>
+			<a href='carmania_partic.php'><button class=" w3-green w3-button">Vendre</button></a>
 		</div>
-		</div>
-		<!--<div>
-					<a href='carmania.php'><button>Accueil</button></a>
-					<a href='carmania_catalogue_a.php'><button>Achats</button></a>
-					<a href='carmania_catalogue_l.php'><button>Locations</button></a>
-		</div>-->
-	
-	<!--<div id='header' class="fond">
-		<div id='banniere'>
-			<h1 id='logo'> Carmania </h1>
-		</div>
-		<div id='boutonsGauche'>
-					<a href='carmania.php'><button class='boutonsHeader' id='boutonAccueil'>Accueil</button></a>
-					<a href='carmania_catalogue_a.php'><button class='boutonsHeader' id='boutonAchats'>Achats</button></a>
-					<a href='carmania_catalogue_l.php'><button class='boutonsHeader' id='boutonLocations'>Locations</button></a>
-		</div>-->
+	</div>
+		
 	
 </div>

@@ -1,8 +1,8 @@
 <?php
-session_start();
-include("identifiants.php");
-include("verif.php");
-include("header.php");
+	session_start();
+	include("identifiants.php");
+	include("verif.php");
+	include("header.php");
 
 ?>
 
@@ -19,29 +19,29 @@ include("header.php");
 			
 		</head>
 
-	<body>
+		<body>
 		
 		
 		
 
 		
-		<div id="boutons">
-			<?php
-				if($mail=='')
-				{
-					echo '<a href="carmania_co.php"><button class="bouton_a" ><span>Vendre mon véhicule</span></button></a>';
-					echo '<a href="carmania_co.php"><button class="bouton_l" ><span>Louer mon véhicule</span></button></a>';
-				}
+			<div id="boutons">
+				<?php
+					if($mail=='') // si on est deco on redirige sur la page de connexion
+					{
+						echo '<a href="carmania_co.php"><button class="bouton_a" ><span>Vendre mon véhicule</span></button></a>';
+						echo '<a href="carmania_co.php"><button class="bouton_l" ><span>Louer mon véhicule</span></button></a>';
+					}
                 
-                else
-                {
-                    echo '<a href="carmania_partic_vente.php"><button class="bouton_a" ><span>Vendre mon véhicule</span></button></a>';
-					echo '<a href="carmania_partic_location.php"><button class="bouton_l" ><span>Louer mon véhicule</span></button></a>';
-                }
-			?>
-		</div>	
+					else // sinon sur page de vente/location
+					{
+						echo '<a href="carmania_partic_vente.php"><button class="bouton_a" ><span>Vendre mon véhicule</span></button></a>';
+						echo '<a href="carmania_partic_location.php"><button class="bouton_l" ><span>Louer mon véhicule</span></button></a>';
+					}
+				?>
+			</div>	
 
         
 
-	</body>
+		</body>
 	</html>
