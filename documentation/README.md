@@ -1,4 +1,10 @@
 ## DOCUMENTATION
 
 
-Ce dossier stock le planning et les explications concernant le projet Carmania.
+Ce dossier stock: 
+  -Le planning 
+  -La présentation du projet carmania
+  -Le dictionnaire de données du site
+  -Le rapport 
+  -Le MCD
+  
