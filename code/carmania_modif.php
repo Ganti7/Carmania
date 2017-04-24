@@ -40,13 +40,13 @@
 					echo'<form method="post" action="carmania_modif.php" enctype="multipart/form-data">
 					<fieldset><label for="FirstName" class="w3-text-green">Nom : '.$data['nom_utilisateur'].'  </label><br>
 					<label for="LastName" class="w3-text-green">Prénom : '.$data['prenom_utilisateur'].' </label><br>
-					<label for="mail" class="w3-text-green">Adresse mail : '.$data['adresse_mail_utilisateur'].'</label><br>
+					<label for="mail" class="w3-text-green">Adresse mail : '.$mail.'</label><br>
 					<label for="A_Password" class="w3-text-green">Ancien mot de passe :</label><input class="input" type="password" name="A_Password"><br>
 					<label for="Password" class="w3-text-green">Nouveau mot de passe :</label><input class="input" type="password" name="Password"><br>
 					<label for="Confirmation" class="w3-text-green">Retaper le mot de passe :</label><input class="input" type="password" name="Confirmation"><br>
 					<label for="City" class="w3-text-green">Ville : </label><input class="input" type="text" name="City" value="'.$data['ville_utilisateur'].'"><br>
 					<input class="input" type="hidden" name="mdp" value="'.$data['mot_de_passe'].'"><br>
-					<input class="input" type="hidden" name="mail" value="'.$data['adresse_mail_utilisateur'].'"><br>
+					
 					</fieldset>
 					<p><input class="w3-green w3-button" type="submit" value="Modifier" /></p></form>';
 				}
@@ -63,7 +63,7 @@
 					$a_mdp=$_POST['A_Password'];
 					$n_mdp=$_POST['Password'];
 					$confirm=$_POST['Confirmation'];
-					$email=$_POST['mail'];
+					//$email=$_POST['mail'];
 					$ville=$_POST['City'];
 				
 					if(empty($a_mdp) || empty($n_mdp) || empty($confirm) || empty($ville)) // si champs vide
@@ -81,7 +81,7 @@
 						$i++;
 					}
 					
-					if ($a_mdp != $d_mdp)  // si l'ancien mdp ne correspond pas 
+					if (!password_verify($a_mdp,$d_mdp))  // si l'ancien mdp ne correspond pas 
 					{
 						$a_mdp_erreur= "Votre ancien mot de passe ne correspond pas";
 						$i++;
@@ -93,9 +93,9 @@
 					{
 						
 						echo'<p class="w3-text-green">Modification terminée !</p>';
+						$hash=password_hash($n_mdp,PASSWORD_BCRYPT);
 						
-						
-						$query=$db->prepare('UPDATE  utilisateur SET mot_de_passe="'.$n_mdp.'", ville_utilisateur="'.$ville.'" WHERE adresse_mail_utilisateur ="'.$email.'"');
+						$query=$db->prepare('UPDATE  utilisateur SET mot_de_passe="'.$hash.'", ville_utilisateur="'.$ville.'" WHERE adresse_mail_utilisateur ="'.$mail.'"');
 						$query->execute();
 						echo'<p class="w3-text-green">Cliquez <a class="w3-text-blue" href="carmania_profil.php">ici</a> pour revenir sur la page de votre profil</p>'; 
 						
@@ -103,17 +103,16 @@
 					}
 					else // sinon
 					{
-						echo'<h1>Modification interrompue</h1>';
+						echo'<p class="w3-text-green">Modification interrompue</h1>';
 
-						echo'<p>Une ou plusieurs erreurs se sont produites pendant l\'incription</p>';
+						echo'<p class="w3-text-green">Une ou plusieurs erreurs se sont produites pendant l\'incription</p>';
 
-						echo'<p>'.$i.' erreur(s)</p>';
-						//echo'<p>'.$email_erreur1.'<p>';
-						//echo'<p>'.$email_erreur2.'<p>';
-						echo'<p>'.$a_mdp_erreur.'<p>';
-						echo'<p>'.$mdp_erreur.'<p>';
-						echo'<p>'.$erreur_champ.'<p>';
-						echo'<p>Cliquez <a href="./carmania_modif.php">ici</a> pour recommencer</p>';
+						echo'<p class="w3-text-green">'.$i.' erreur(s)</p>';
+						
+						echo'<p class="w3-text-green">'.$a_mdp_erreur.'<p>';
+						echo'<p class="w3-text-green">'.$mdp_erreur.'<p>';
+						echo'<p class="w3-text-green">'.$erreur_champ.'<p>';
+						echo'<p class="w3-text-green">Cliquez <a class="w3-text-blue" href="./carmania_modif.php">ici</a> pour recommencer</p>';
 					}
 
 				

@@ -66,8 +66,8 @@
 						$query->execute();
 						$data=$query->fetch();
 					
-				
-						if ($data['mot_de_passe'] ==$_POST['Password']) // Acces OK !
+						
+						if (password_verify($_POST['Password'],$data['mot_de_passe'])) // Acces OK !
 						{
 							$_SESSION['mail'] = $data['adresse_mail_utilisateur'];   // on garde le mail
 						

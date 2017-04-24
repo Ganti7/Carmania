@@ -23,7 +23,7 @@
 		
 			<?php
 		
-		
+				
                     // on affiche les informations de l'utilisateur
 				$query=$db->prepare('SELECT adresse_mail_utilisateur, nom_utilisateur, prenom_utilisateur, 
 						ville_utilisateur, date_inscription_utilisateur FROM utilisateur WHERE adresse_mail_utilisateur=:mail');
@@ -45,7 +45,7 @@
 				<input class="input" type="hidden" name="mail" value="'.$data['adresse_mail_utilisateur'].'"><br>
 				</fieldset></form>';
 				echo'<div class="w3-display-container" style="height:150px;">';
-				if($_SESSION['level']!=1) // si pas admin on affiche un bouton modifier et mes véhicules
+				if($level!=1) // si pas admin on affiche un bouton modifier et mes véhicules
 				{
 					
 					echo '<a href="carmania_modif.php"><button class="w3-green w3-button w3-display-left">Modifier</button></a>';

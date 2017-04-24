@@ -111,12 +111,13 @@
 						if ($i==0) // si tout est bon
 
 						{
-							
-							echo'<h1>Inscription terminée</h1>';
+							$mdp=$_POST['Password'];
+							$hash=password_hash($mdp,PASSWORD_BCRYPT);
+							echo'<p class="w3-text-green">Inscription terminée</p>';
 
-							echo'<p>Bienvenue '.stripslashes(htmlspecialchars($_POST['LastName'])).' vous êtes maintenant membre de la Carmania family</p>
-								<p><b>DAMN</b></p>
-								<p>Vous allez être redirigé sur la page d accueil</p>';
+							echo'<p  class="w3-text-green">Bienvenue '.stripslashes(htmlspecialchars($_POST['LastName'])).' vous êtes maintenant membre de la Carmania family</p>
+								<p  class="w3-text-green"><b>DAMN</b></p>
+								<p  class="w3-text-green">Vous allez être redirigé sur la page d accueil</p>';
 						
 							$query=$db->prepare('INSERT INTO utilisateur (adresse_mail_utilisateur, mot_de_passe, nom_utilisateur, prenom_utilisateur,
 							ville_utilisateur, date_inscription_utilisateur, droit)
@@ -128,7 +129,7 @@
 
 							':email' => $_POST['mail'],
 
-							':mdp' => $_POST['Password'],
+							':mdp' => $hash,
 
 							':prenom' => $_POST['LastName'],
 

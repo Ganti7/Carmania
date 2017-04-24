@@ -80,7 +80,7 @@
 					$nb_pages=ceil($nb_element_total / $limite); // pages pour pagination
 			
 					echo'<div id="centrer">';
-					echo '<form method="post" action="carmania_catalogue_a.php" enctype="multipart/form-data">';
+					
 					while($donnees = $req->fetch())  // on affiche les voitures disponibles dans le catalogue
 					{
 				
@@ -114,13 +114,18 @@
 						else     // on affiche un bouton épuisé si véhicule non dispo
 							echo '<button class="w3-green w3-button w3-disabled">Stock épuisé !</button>';
 						if(isset($_SESSION['level']) && $_SESSION['level']==1) // si admin bouton pour supprimer le véhicule
+						{
+							echo '<form method="post" action="carmania_catalogue_a.php" enctype="multipart/form-data">';
+							
 							echo '<input type="submit" value="Supprimer"  class="w3-green w3-button" onclick="sup('.$donnees['idVehicule_achat'].')"/>';
+							echo'</form>';
+						}
 						echo'</div>';
 				
 				
 				
 					}
-					echo'</form>';
+					
 					echo'<div class="w3-center"><div class="w3-bar">'; // affichage de la pagination
 					if($page >1)
 						echo'<a href="carmania_catalogue_a.php?page='.($page-1).'" class="w3-bar-item w3-button w3-text-green">&laquo;</a>';

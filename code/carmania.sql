@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Dim 23 Avril 2017 à 19:56
+-- Généré le :  Lun 24 Avril 2017 à 15:23
 -- Version du serveur :  5.7.14
 -- Version de PHP :  5.6.25
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `carmania3`
+-- Base de données :  `carmania`
 --
 
 -- --------------------------------------------------------
@@ -31,16 +31,6 @@ CREATE TABLE `achete` (
   `adresse_mail_utilisateur` varchar(30) NOT NULL,
   `idVehicule_achat` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Contenu de la table `achete`
---
-
-INSERT INTO `achete` (`date_achat`, `adresse_mail_utilisateur`, `idVehicule_achat`) VALUES
-('2017-04-10', 'babtou@ken.fr', 1),
-('2017-04-14', 'babtou@ken.fr', 2),
-('2017-04-11', 'babtou@ken.fr', 3),
-('2017-04-14', 'babtou@ken.fr', 5);
 
 -- --------------------------------------------------------
 
@@ -80,7 +70,7 @@ CREATE TABLE `camion_location` (
 --
 
 INSERT INTO `camion_location` (`poids`, `volume`, `hauteur`, `idVehicule_location`) VALUES
-(1200, 7, '1.971m', 2);
+(1200, 7, '1.971', 2);
 
 -- --------------------------------------------------------
 
@@ -107,6 +97,15 @@ CREATE TABLE `commande` (
   `adresse_mail_utilisateur` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Contenu de la table `commande`
+--
+
+INSERT INTO `commande` (`idCommande`, `prix_journee`, `carburant`, `puissance`, `marque`, `modele`, `transmission`, `chemin_image`, `climatisation`, `empreinte_carbone`, `prix_achat`, `date_achat`, `date_debut`, `date_fin`, `adresse_mail_vendeur`, `adresse_mail_utilisateur`) VALUES
+(2, NULL, 'Diesel', 150, 'Audi', 'A7 Sportback', 'Manuelle', 'A7Sportback.png', 1, 140, '60970.000', '2017-04-24', NULL, NULL, NULL, 'babtou@ken.fr'),
+(3, NULL, 'S95', 70, 'Renault', 'Twingo Life', 'Manuelle', 'TwingoLife.png', 1, 112, '11500.000', '2017-04-24', NULL, NULL, NULL, 'babtou@ken.fr'),
+(4, '10.000', 'S95', 70, 'Renault', 'Twingo Life', 'Manuelle', 'TwingoLife.png', 1, 112, NULL, NULL, '2017-04-25', '2017-04-30', NULL, 'babtou@ken.fr');
+
 -- --------------------------------------------------------
 
 --
@@ -131,13 +130,6 @@ CREATE TABLE `loue` (
   `idVehicule_location` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Contenu de la table `loue`
---
-
-INSERT INTO `loue` (`date_debut`, `date_fin`, `adresse_mail_utilisateur`, `idVehicule_location`) VALUES
-('2017-04-14', '2017-04-17', 'babtou@ken.fr', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -159,9 +151,8 @@ CREATE TABLE `reclamation` (
 --
 
 INSERT INTO `reclamation` (`reclamation_pk`, `date_ouverture`, `etat`, `objet`, `texte`, `date_fermeture`, `adresse_mail_utilisateur`) VALUES
-(4, '2017-04-13', 'Non rÃ©solu', 'ntt', 'ukl', '2017-04-13', 'babtou@ken.fr'),
-(5, '2017-04-13', 'Non rÃ©solu', 'sef', 'Entrez votre message ici...', '2017-04-13', 'babtou@ken.fr'),
-(6, '2017-04-13', 'Non rÃ©solu', 'fes', 'fsef', NULL, 'babtou@ken.fr');
+(7, '2017-04-24', 'rÃ©solu', 'RÃ©clamation', 'J\'ai une rÃ©clamation ui', '2017-04-24', 'babtou@ken.fr'),
+(8, '2017-04-24', 'Non rÃ©solu', 'RÃ©clamation encore', 'Ui encore une Ui', NULL, 'babtou@ken.fr');
 
 -- --------------------------------------------------------
 
@@ -171,7 +162,7 @@ INSERT INTO `reclamation` (`reclamation_pk`, `date_ouverture`, `etat`, `objet`, 
 
 CREATE TABLE `utilisateur` (
   `adresse_mail_utilisateur` varchar(30) NOT NULL,
-  `mot_de_passe` varchar(12) NOT NULL,
+  `mot_de_passe` varchar(200) NOT NULL,
   `nom_utilisateur` varchar(25) NOT NULL,
   `prenom_utilisateur` varchar(30) NOT NULL,
   `ville_utilisateur` varchar(25) DEFAULT NULL,
@@ -184,15 +175,16 @@ CREATE TABLE `utilisateur` (
 --
 
 INSERT INTO `utilisateur` (`adresse_mail_utilisateur`, `mot_de_passe`, `nom_utilisateur`, `prenom_utilisateur`, `ville_utilisateur`, `date_inscription_utilisateur`, `droit`) VALUES
-('axelf@gmail.com', 'good', 'Fauconnier', 'Axel', 'Marseille', '2017-03-31', 1),
-('babtou@ken.fr', 'idk', 'bab', 'tout', 'ville', '2017-03-31', NULL),
-('boii@gmail.com', 'missile', 'Cast', 'Fidel', 'Cuba', '2017-03-31', NULL),
-('carmania@pro.fr', 'idk', 'Car', 'Mania', 'cary', '2017-03-31', NULL),
-('commu@yahoo.fr', 'kompot', 'Stal', 'Joseph', 'Moscou', '2017-03-31', NULL),
-('coucou@yahoo.fr', 'idk', 'couille', 'bite', 'kool', '2017-03-31', NULL),
-('jean@gmail.com', 'idk', 'Moulin', 'Jean', 'France', '2017-03-31', NULL),
-('leonel@yahoo.fr', 'hola', 'Trot', 'Leon', 'SaoPaulo', '2017-03-31', NULL),
-('mmp@live.fr', 'idk', 'Petaing', 'MarionMarechal', 'Vichy', '2017-03-31', NULL);
+('axelf@gmail.com', '$2y$10$3HFkf.03CGUvtBs2tjaOeOq4P6NIZgt64URID.ChEFNxMKj5FWOLq', 'Fauconnier', 'Axel', 'Marseille', '2017-04-24', 1),
+('babtou@ken.fr', '$2y$10$VSu0E0VOlJT6WsYV9y/HBu8VPFKD9OPRc4fJdT.HzpC1mESn0fiRG', 'bab', 'tout', 'ville', '2017-04-24', 0),
+('boii@gmail.com', '$2y$10$I3QCobAQTVpF6WCcYU90pesye7fpIURNG1fGzezh4ccEXrQs91Xmu', 'Cast', 'Fidel', 'Cuba', '2017-04-24', 0),
+('carmania@pro.fr', '$2y$10$qSG7P/AeVoF0S8764REACetBuhtXIvSBvThFVjsE1tpFvu3UuxVpW', 'Car', 'Mania', 'cary', '2017-04-24', 0),
+('commu@yahoo.fr', '$2y$10$nVagSvBErhP591s3Ph4.6.FjgnMk3lhPSpaEGyq2tQifpeyW6BGou', 'Stal', 'Joseph', 'Moscou', '2017-04-24', 0),
+('jean@gmail.com', '$2y$10$PkbtJs/fnvtsntHxif0tf.Ki2u6evPLVa82n4WbpD6WBg/itn8Hzq', 'Moulin', 'Jean', 'France', '2017-04-24', 0),
+('leonel@yahoo.fr', '$2y$10$5r5sYtp4t.glRBNSwIf1qu2aHpGTdSHBrF8TeSTBDzkOra6QWo4k.', 'Trot', 'Leon', 'SaoPaulo', '2017-04-24', 0),
+('lol@hotmail.fr', '$2y$10$ueCLHhYL1v.dFhnmDyuaoOYi7HddomIENneJPT.HOzgo9qo2BNuyO', 'Bessai', 'Sofiane', 'Marseille', '2017-04-24', 1),
+('lol@lol.fr', '$2y$10$f2iW/JUqFA/XQvJZo9kzOOgKy/VRpHv9jJ9UZlr1JFKfXBBX4G1bO', 'Bessai', 'Sofiane', 'Marseille', '2017-04-24', 0),
+('mmp@live.fr', '$2y$10$jThLmDMuOTCJnOOcxurEleXiVsgpFBwUPdGkmXqiAzvbtPQuKzABW', 'Petaing', 'MarionMarechal', 'Vichy', '2017-04-24', 0);
 
 -- --------------------------------------------------------
 
@@ -220,12 +212,12 @@ CREATE TABLE `vehicule_achat` (
 --
 
 INSERT INTO `vehicule_achat` (`idVehicule_achat`, `prix_achat`, `carburant`, `puissance`, `marque`, `modele`, `transmission`, `chemin_image`, `climatisation`, `empreinte_carbone`, `nb_disponible`, `adresse_mail_utilisateur`) VALUES
-(1, '11500.000', 'S95', 70, 'Renault', 'Twingo Life', 'Manuelle', 'TwingoLife.png', 1, 112, 2, NULL),
-(2, '23940.000', 'Diesel', 105, 'Volkswagen', 'Golf Match', 'Manuelle', 'GolfMatch.png', 1, 115, 3, NULL),
-(3, '60970.000', 'Diesel', 150, 'Audi', 'A7 Sportback', 'Manuelle', 'A7Sportback.png', 1, 140, 2, NULL),
+(1, '60970.000', 'Diesel', 150, 'Audi', 'A7 Sportback', 'Manuelle', 'A7Sportback.png', 1, 140, 1, NULL),
+(2, '11500.000', 'S95', 70, 'Renault', 'Twingo Life', 'Manuelle', 'TwingoLife.png', 1, 112, 1, NULL),
+(3, '23940.000', 'Diesel', 105, 'Volkswagen', 'Golf Match', 'Manuelle', 'GolfMatch.png', 1, 115, 3, NULL),
 (4, '15320.000', 'S98', 110, 'Citroen', 'C3', 'Automatique', 'NouvelleC3.png', 1, 103, 4, NULL),
 (5, '20600.000', 'Diesel', 95, 'Renault', 'Trafic', 'Manuelle', 'Trafic.png', 1, 160, 5, NULL),
-(6, '15000.000', 'Diesel', 70, 'volkswagen', 'polo', 'Manuelle', 'sg', 1, 70, 1, 'babtou@ken.fr');
+(15, '14000.000', 'Diesel', 70, 'peugeot', '207', 'Manuelle', 'https://www.greasenergy-shop.com/WebRoot/Store2/Shops/63102114/5177/A070/BE69/4900/537E/C0A8/28B8/EFEE/Peugeot-307-bea.png', 1, 70, 1, 'babtou@ken.fr');
 
 -- --------------------------------------------------------
 
@@ -254,8 +246,8 @@ CREATE TABLE `vehicule_location` (
 --
 
 INSERT INTO `vehicule_location` (`idVehicule_location`, `prix_journee`, `carburant`, `puissance`, `marque`, `modele`, `transmission`, `chemin_image`, `climatisation`, `empreinte_carbone`, `nb_disponible`, `nb_stock`, `adresse_mail_utilisateur`) VALUES
-(1, '10.000', 'S95', 70, 'Renault', 'Twingo Life', 'Manuelle', 'TwingoLife.png', 1, 112, 4, 6, NULL),
-(2, '17.000', 'Diesel', 95, 'Renault', 'Trafic', 'Manuelle', 'Trafic.png', 1, 160, 3, 3, NULL);
+(1, '10.000', 'S95', 70, 'Renault', 'Twingo Life', 'Manuelle', 'TwingoLife.png', 1, 112, 1, 2, NULL),
+(2, '17.000', 'Diesel', 95, 'Renault', 'Trafic', 'Manuelle', 'Trafic.png', 1, 160, 2, 2, NULL);
 
 -- --------------------------------------------------------
 
@@ -274,11 +266,11 @@ CREATE TABLE `voiture_achat` (
 --
 
 INSERT INTO `voiture_achat` (`portes`, `couleur`, `idVehicule_achat`) VALUES
-(3, 'Blanche', 1),
-(3, 'Blanche', 2),
-(5, 'Gris foncé', 3),
+(5, 'Gris foncé', 1),
+(3, 'Rouge', 2),
+(3, 'Blanche', 3),
 (5, 'Blanche', 4),
-(5, 'bleu', 6);
+(5, 'noir', 15);
 
 -- --------------------------------------------------------
 
@@ -297,7 +289,7 @@ CREATE TABLE `voiture_location` (
 --
 
 INSERT INTO `voiture_location` (`portes`, `couleur`, `idVehicule_location`) VALUES
-(3, 'Blanche', 1);
+(3, 'rouge', 1);
 
 --
 -- Index pour les tables exportées
@@ -388,20 +380,25 @@ ALTER TABLE `voiture_location`
 --
 
 --
+-- AUTO_INCREMENT pour la table `commande`
+--
+ALTER TABLE `commande`
+  MODIFY `idCommande` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
 -- AUTO_INCREMENT pour la table `reclamation`
 --
 ALTER TABLE `reclamation`
-  MODIFY `reclamation_pk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `reclamation_pk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT pour la table `vehicule_achat`
 --
 ALTER TABLE `vehicule_achat`
-  MODIFY `idVehicule_achat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idVehicule_achat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT pour la table `vehicule_location`
 --
 ALTER TABLE `vehicule_location`
-  MODIFY `idVehicule_location` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idVehicule_location` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- Contraintes pour les tables exportées
 --
