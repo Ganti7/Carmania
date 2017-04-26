@@ -32,20 +32,22 @@ Si on a le temps :
 
 Avancement 10/02/2017 :
 
- Structure du site
- Structure base données 
- Page d'accueil
+ * Structure du site
+ * Structure base données 
+ 
  
  Avancement 17/02/2017 :
  
- Amélioration base de données
- Style du site
+ * Amélioration base de données
+ * Style du site
+ * Structure du site
  
  Avancement 03/03/2017 :
  
- Amélioration base de données 
- Style du site
- Structure du site 
+* Amélioration base de données 
+* Style du site
+* Structure du site 
+* Page d'accueil
  
  
  ( L'avancement avant le 10/03/2017 est confuse du fait de l'incompréhension de la méthode préconisée par le professeur)
