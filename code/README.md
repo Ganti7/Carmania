@@ -18,6 +18,6 @@ Ce dossier stocke les fichier html,php et css du site carmania :
 
 - functions.php : fichier contenant la fonction d'erreur et où on ajoutera les autres fonctions utiles au site.
 
-- identifiants.php : fichier permettant de se connecter à la base de données.
+- identifiants.php : fichier permettant de se connecter à la base de données. !!! A changer si connexion impossible !!!
 
 - verif.php : fichier contenant les variables de session de l'utilisateur, connaitre son mail à tout moment ou savoir si il est connecté ou pas.
