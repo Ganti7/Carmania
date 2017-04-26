@@ -38,7 +38,7 @@
 				echo'</div>';
 		
 
-				if($_SESSION['level']!=1)  // si non admin on affiche historique propre a l'utilsateur
+				if($level!=1)  // si non admin on affiche historique propre a l'utilsateur
 				{
 		
 					//$req=$db->query('SELECT * FROM loue WHERE adresse_mail_utilisateur="'.$mail.'"');

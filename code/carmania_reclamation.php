@@ -29,7 +29,7 @@
 					echo '<h2>Réclamation<h2>';
 					echo'</div>';
 				
-					if($_SESSION['level']!=1)  // si non admin
+					if($level!=1)  // si non admin
 					{
 						echo'<div class="w3-show-inline-block">';
 						echo'<div class="w3-bar w3-light-green">';
