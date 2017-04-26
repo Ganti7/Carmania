@@ -50,7 +50,7 @@
 				$nb_element_total=$resultFoundRows->fetchColumn(); 
 				$nb_pages=ceil($nb_element_total / $limite); // pages pour pagination
 				$i=1;
-				echo '<form method="post" action="carmania_partic_vehic_l.php" enctype="multipart/form-data">';
+				
 				while($donnees = $req->fetch())  // on affiche les véhicules achetés
 				{
 					
@@ -84,14 +84,14 @@
 					}
 						
 					else   // sinon bouton pour supprimer l'annonce
-						echo '<input type="submit" value="Supprimer" name="'.$i.'" class="w3-green w3-button" onclick="sup('.$donnees['idVehicule_location'].')"/>';
+						echo '<a href="carmania_partic_vehic_a.php?page='.$page.'"><button class="w3-green w3-button" onclick="sup('.$donnees['idVehicule_achat'].')">Supprimer</button></a>';
 			
 					$i++;
 					echo'</div>';		
 			
 						
 				}
-				echo'</form>';
+				
 				if($rien==0)
 					echo'<p class="w3-text-green"> Vous n\'avez pas encore mis de véhicule en location.</p>';
 			

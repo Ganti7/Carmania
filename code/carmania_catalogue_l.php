@@ -110,9 +110,7 @@
 							echo '<button class="w3-green w3-button w3-disabled">Stock épuisé !</button>';
 						if(isset($_SESSION['level']) && $_SESSION['level']==1) // si admin bouton pour supprimer le véhicule
 						{ 
-							echo '<form method="post" action="carmania_catalogue_l.php" enctype="multipart/form-data">';
-							echo '<input type="submit" value="Supprimer"  class="w3-green w3-button" onclick="sup('.$donnees['idVehicule_location'].')"/>';
-							echo'</form>';
+							echo '<a href="carmania_partic_vehic_l.php?page='.$page.'"><button class="w3-green w3-button" onclick="sup('.$donnees['idVehicule_location'].')">Supprimer</button></a>';
 						}
 						echo'</div>';
 				
